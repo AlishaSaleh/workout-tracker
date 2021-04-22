@@ -15,6 +15,7 @@ router.post("/workouts", (req, res) => {
     Workout.create({})
         .then(dbWorkout => {
             res.json(dbWorkout);
+            console.log('LOOK HERE  > ' + dbWorkout)
         })
         .catch(err => {
             res.json(err);
@@ -24,7 +25,7 @@ router.post("/workouts", (req, res) => {
 router.put("/workouts/:id", (req, res) => {
     Workout.updateOne( //params.id
         { _id: req.params.id },
-        { $push: { exercise: req.body } },
+        { $push: { exercises: req.body } },
         { new: true }
     )
         .then(dbWorkout => {
