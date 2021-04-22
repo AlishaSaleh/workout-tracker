@@ -15,7 +15,7 @@ router.post("/workouts", (req, res) => {
     Workout.create({})
         .then(dbWorkout => {
             res.json(dbWorkout);
-            console.log('LOOK HERE  > ' + dbWorkout)
+           // console.log('LOOK HERE  > ' + dbWorkout)
         })
         .catch(err => {
             res.json(err);
